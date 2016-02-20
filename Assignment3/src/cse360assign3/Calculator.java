@@ -13,10 +13,15 @@ public class Calculator
 	// the current total of the calculations
 	private int total;
 	
+	// used for operators and operations
+	private String actions;
+	
 	/** Sets total to 0 */
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		actions = Integer.toString(total);
+		
 	}
 	
 	
@@ -31,6 +36,7 @@ public class Calculator
 	 */
 	public void add (int value) 
 	{
+		actions += " + " + value;
 		total += value;
 	}
 	
@@ -39,31 +45,34 @@ public class Calculator
 	 */
 	public void subtract (int value) 
 	{
+		actions += " - " + value;
 		total -= value;
 	}
 	
-	/**  multiplies a value into the total
+	/**  multiplies a value with the total
 	 *  @param value	integer used with the operation
 	 */
 	public void multiply (int value) 
 	{
+		actions += " * " + value;
 		total *= value;
 	}
 	
-	/**  divides a value into the total
+	/**  divides the total by the value
 	 *  @param value	integer used with the operation
 	 */
 	public void divide (int value) 
 	{
+		actions += " / " + value;
 		if(value == 0)
 			total = 0;
 		else
 			total /= value;
 	}
 	
-	/** Displays the string of  operators used*/
+	/** Displays the string of values and operators used  */
 	public String getHistory () 
 	{
-		return "";
+		return actions;
 	}
 }
