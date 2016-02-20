@@ -67,7 +67,14 @@ public class CalculatorTest {
 		simpleCalculator.divide(3);
 		
 		assertEquals(1, simpleCalculator.getTotal());
+	}
+	
+	/** Tests the divide by 0 operation  */
+	@Test
+	public void testDivideZero() {
+		Calculator simpleCalculator = new Calculator();
 		
+		simpleCalculator.add(3);
 		simpleCalculator.divide(0);
 		
 		assertEquals(0, simpleCalculator.getTotal());
